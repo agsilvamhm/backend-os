@@ -1,3 +1,3 @@
 # backend-os
-https://www.youtube.com/watch?v=sARIOHW44bc&list=PLA8Qj9w4RGkWwSTtOfXtJ62cTaLoWAFMG&index=55
+https://www.youtube.com/watch?v=uyyp3WgoZF8&list=PLA8Qj9w4RGkWwSTtOfXtJ62cTaLoWAFMG&index=53
 
