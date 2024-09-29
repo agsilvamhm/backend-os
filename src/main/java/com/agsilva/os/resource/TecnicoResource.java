@@ -1,6 +1,7 @@
 package com.agsilva.os.resource;
 
 import com.agsilva.os.dominio.Tecnico;
+import com.agsilva.os.dtos.TecnicoDto;
 import com.agsilva.os.service.TecnicoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +18,9 @@ public class TecnicoResource {
     private TecnicoService tecnicoService;
 
     @GetMapping(value = "{id}")
-    public ResponseEntity<Tecnico> findByid(@PathVariable Integer id){
+    public ResponseEntity<TecnicoDto> findByid(@PathVariable Integer id){
         Tecnico obj = tecnicoService.findById(id);
-        return ResponseEntity.ok().body(obj);
+        TecnicoDto objDto = new TecnicoDto(obj);
+        return ResponseEntity.ok().body(objDto);
     }
 }
