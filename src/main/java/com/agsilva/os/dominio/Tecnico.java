@@ -1,5 +1,6 @@
 package com.agsilva.os.dominio;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 
@@ -8,6 +9,7 @@ import java.util.List;
 
 @Entity
 public class Tecnico extends Pessoa{
+    @JsonIgnore
     @OneToMany(mappedBy = "tecnico")
     private List<Os> list = new ArrayList<>();
     public Tecnico() {
