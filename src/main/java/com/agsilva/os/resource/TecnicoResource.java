@@ -19,8 +19,7 @@ public class TecnicoResource {
 
     @GetMapping(value = "{id}")
     public ResponseEntity<TecnicoDto> findByid(@PathVariable Integer id){
-        Tecnico obj = tecnicoService.findById(id);
-        TecnicoDto objDto = new TecnicoDto(obj);
+        TecnicoDto objDto = new TecnicoDto(tecnicoService.findById(id));
         return ResponseEntity.ok().body(objDto);
     }
 }
