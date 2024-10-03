@@ -3,6 +3,7 @@ package com.agsilva.os.resource;
 import com.agsilva.os.dominio.Tecnico;
 import com.agsilva.os.dtos.TecnicoDto;
 import com.agsilva.os.service.TecnicoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -40,7 +41,7 @@ public class TecnicoResource {
     }
 
     @PostMapping
-    public ResponseEntity<TecnicoDto> create(@RequestBody TecnicoDto objDto){
+    public ResponseEntity<TecnicoDto> create(@Valid @RequestBody TecnicoDto objDto){
         Tecnico newObj = tecnicoService.create(objDto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}").buildAndExpand(newObj.getId()).toUri();

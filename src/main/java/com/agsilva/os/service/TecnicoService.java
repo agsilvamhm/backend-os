@@ -32,11 +32,11 @@ public class TecnicoService {
         if(findbyCPF(objDto) != null){
             throw new DataIntegratyViolationException("CPF já cadastrado na base de dados!");
         }
-        return tecnicoRepository.save(new Tecnico(objDto.id(), objDto.nome(), objDto.cpf(), objDto.telefone()));
+        return tecnicoRepository.save(new Tecnico(objDto.getId(), objDto.getNome(), objDto.getCpf(), objDto.getTelefone()));
     }
 
     private Tecnico findbyCPF(TecnicoDto objDto){
-        Tecnico obj = tecnicoRepository.findByCPF(objDto.cpf());
+        Tecnico obj = tecnicoRepository.findByCPF(objDto.getCpf());
         if (obj != null){
             return obj;
         }
