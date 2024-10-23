@@ -20,7 +20,6 @@ public abstract class Pessoa implements Serializable {
 
     private String nome;
     @CPF
-
     private String cpf;
 
     private String telefone;
