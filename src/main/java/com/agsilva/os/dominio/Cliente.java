@@ -4,11 +4,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Cliente extends Pessoa{
+public class Cliente extends Pessoa implements Serializable {
+    private static final long serialVersionUID = 1L;
     @ManyToMany(mappedBy = "cliente")
     private List<Os> list = new ArrayList<>();
     public Cliente() {
