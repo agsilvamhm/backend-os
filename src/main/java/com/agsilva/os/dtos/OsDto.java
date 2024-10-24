@@ -2,6 +2,7 @@ package com.agsilva.os.dtos;
 
 import com.agsilva.os.dominio.Os;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -16,9 +17,12 @@ public class OsDto implements Serializable {
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime dataFechamento;
     private Integer prioridade;
+    @NotEmpty(message = "O campo Observaçoes é requerido!")
     private String observacoes;
     private Integer status;
+
     private Integer tecnico;
+
     private Integer cliente;
 
     public OsDto(){
@@ -89,5 +93,13 @@ public class OsDto implements Serializable {
 
     public void setCliente(Integer cliente) {
         this.cliente = cliente;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
